@@ -2,8 +2,8 @@
 ## Minecraft Random Brush                                  ##
 ## MC-Version: JE 1.16.5                                   ##
 ## Author    : @KizahashiLuca                              ##
-## Date      : 18 Mar 2021                                 ##
-## Version   : α-0.1                                       ##
+## Date      : 19 Mar 2021                                 ##
+## Version   : α-0.2                                       ##
 ## ©2021. This work is licensed under a CC BY 4.0 license. ##
 #############################################################
 
@@ -22,7 +22,10 @@ execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] if block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:0b}] run function mrb:brush_cobblestone/detect_position
 
 ## Set block
-execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b},scores={OR=1}] run function mrb:brush_cobblestone/set_block
+execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b,SelectedItem:{Count:1b}},scores={OR=1}] run function mrb:brush_cobblestone/detect_radius_1m
+execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b,SelectedItem:{Count:2b}},scores={OR=1}] run function mrb:brush_cobblestone/detect_radius_2m
+execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b,SelectedItem:{Count:3b}},scores={OR=1}] run function mrb:brush_cobblestone/detect_radius_3m
+execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b},nbt=!{SelectedItem:{Count:2b}},nbt=!{SelectedItem:{Count:3b}},scores={OR=1}] run function mrb:brush_cobblestone/detect_radius_1m
 
 ## Kill cloud
 kill @e[type=minecraft:area_effect_cloud,tag=MRBposition]

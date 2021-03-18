@@ -2,8 +2,8 @@
 ## Minecraft Random Brush                                  ##
 ## MC-Version: JE 1.16.5                                   ##
 ## Author    : @KizahashiLuca                              ##
-## Date      : 18 Mar 2021                                 ##
-## Version   : α-0.1                                       ##
+## Date      : 19 Mar 2021                                 ##
+## Version   : α-0.2                                       ##
 ## ©2021. This work is licensed under a CC BY 4.0 license. ##
 #############################################################
 
@@ -29,6 +29,3 @@ scoreboard players set #mrb RandomAnswer 0
 scoreboard players set #mrb RandomModder 2147483647
 scoreboard players set #mrb RandomMultiplier 48271
 scoreboard players set #mrb RandomMaxNumber 5
-
-## Initialize random
-function mrb:setting/random_generator/initialize
