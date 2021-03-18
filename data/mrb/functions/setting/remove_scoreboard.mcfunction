@@ -22,3 +22,9 @@ scoreboard objectives remove RandomAnswer
 scoreboard objectives remove RandomModder
 scoreboard objectives remove RandomMultiplier
 scoreboard objectives remove RandomMaxNumber
+
+scoreboard players reset @a
+scoreboard players reset #mrb
+
+## Remove entities
+kill @e[type=minecraft:area_effect_cloud]

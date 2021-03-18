@@ -18,4 +18,4 @@ kill @e[type=minecraft:falling_block,nbt={BlockState:{Name:"minecraft:barrier"}}
 execute as @a[nbt={SelectedItem:{tag:{Tags:["MRBitem","brush_cobblestone"]}}}] at @s run function mrb:brush_cobblestone/main
 execute as @a[nbt={SelectedItem:{tag:{Tags:["MRBitem","brush_ground"]}}}] at @s run function mrb:brush_ground/main
 
-execute as @a run title @s actionbar ["",{"text":"現在の座標 : ( "},{"score": {"name":"@s","objective": "PosX"}},{"text":", "},{"score": {"name":"@s","objective": "PosY"}},{"text":", "},{"score": {"name":"@s","objective": "PosZ"}},{"text":")"}]
+execute as @a[nbt={SelectedItem:{tag:{Tags:["MRBitem"]}}}] run title @s actionbar ["",{"text":"現在の座標 : ( "},{"score": {"name":"@s","objective": "PosX"}},{"text":", "},{"score": {"name":"@s","objective": "PosY"}},{"text":", "},{"score": {"name":"@s","objective": "PosZ"}},{"text":")"}]
