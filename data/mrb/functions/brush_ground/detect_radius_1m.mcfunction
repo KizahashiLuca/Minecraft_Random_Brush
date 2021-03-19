@@ -7,17 +7,5 @@
 ## ©2021. This work is licensed under a CC BY 4.0 license. ##
 #############################################################
 
-## Generate sphere
+## Generate circle
 summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["MRBradius"],NoGravity:1b,Invulnerable:1b,Particle:"block air",Radius:0.5f,Duration:2147483647}
-
-execute as @e[type=minecraft:area_effect_cloud,tag=MRBradius] at @s unless block ~ ~ ~ #mrb:unless run tp ~ ~1 ~
-execute as @e[type=minecraft:area_effect_cloud,tag=MRBradius] at @s unless block ~ ~ ~ #mrb:unless run kill @s
-
-## Random generator
-function mrb:setting/random_generator/initialize
-
-## Set block
-execute as @e[type=minecraft:area_effect_cloud,tag=MRBradius] at @s unless block ~ ~-1 ~ #mrb:unless run function mrb:brush_ground/set_block
-
-## Kill cloud
-kill @e[type=minecraft:area_effect_cloud,tag=MRBradius]

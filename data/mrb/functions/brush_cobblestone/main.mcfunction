@@ -27,5 +27,8 @@ execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b,SelectedItem:{Count:3b}},scores={OR=1}] run function mrb:brush_cobblestone/detect_radius_3m
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b},nbt=!{SelectedItem:{Count:2b}},nbt=!{SelectedItem:{Count:3b}},scores={OR=1}] run function mrb:brush_cobblestone/detect_radius_1m
 
+## Set block
+execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b},scores={OR=1}] run function mrb:brush_cobblestone/set_block_main
+
 ## Kill cloud
 kill @e[type=minecraft:area_effect_cloud,tag=MRBposition]

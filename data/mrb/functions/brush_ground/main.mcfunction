@@ -21,11 +21,14 @@ execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~
 
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] if block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:0b}] run function mrb:brush_ground/detect_position
 
-## Set block
+## Set cloud
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b,SelectedItem:{Count:1b}},scores={OR=1}] run function mrb:brush_ground/detect_radius_1m
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b,SelectedItem:{Count:2b}},scores={OR=1}] run function mrb:brush_ground/detect_radius_2m
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b,SelectedItem:{Count:3b}},scores={OR=1}] run function mrb:brush_ground/detect_radius_3m
 execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b},nbt=!{SelectedItem:{Count:2b}},nbt=!{SelectedItem:{Count:3b}},scores={OR=1}] run function mrb:brush_ground/detect_radius_1m
+
+## Set block
+execute at @e[type=minecraft:area_effect_cloud,tag=MRBposition] unless block ~ ~-1 ~ #mrb:unless as @s[nbt={OnGround:1b},scores={OR=1}] run function mrb:brush_ground/set_block_main
 
 ## Kill cloud
 kill @e[type=minecraft:area_effect_cloud,tag=MRBposition]
